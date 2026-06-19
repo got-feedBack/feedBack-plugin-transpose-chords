@@ -129,7 +129,7 @@
         button.textContent = 'Transpose Chords';
         button.title = 'Toggle chord transposition to E Standard';
         button.onclick = toggle;
-        controls.insertBefore(button, last);
+        if (last && last.parentNode === controls) controls.insertBefore(button, last); else controls.appendChild(button);
         button.click(); // Trigger initial state to apply to current song if loaded
     }
 
