@@ -2,5 +2,8 @@
   "id": "transpose-chords",
   "name": "Transpose Chords",
   "version": "0.1.0",
-  "script": "screen.js"
+  "script": "screen.js",
+  "category": "tools",
+  "description": "Transpose chords and capo helper.",
+  "icon": "assets/thumb.svg"
 }
