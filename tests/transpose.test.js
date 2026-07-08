@@ -64,7 +64,8 @@ test('uniform tuning offsets map to inverse semitone shift', () => {
     // Whole song tuned down 2 → transpose chords up... plugin inverts sign.
     assert.equal(computeSemitonesFromTuning([-2, -2, -2, -2, -2, -2]), 2);
     assert.equal(computeSemitonesFromTuning([1, 1, 1, 1]), -1);
-    assert.equal(computeSemitonesFromTuning([0, 0, 0, 0, 0, 0]), -0);
+    // E-standard yields no shift (implementation returns -0; sign is irrelevant).
+    assert.equal(computeSemitonesFromTuning([0, 0, 0, 0, 0, 0]) === 0, true);
 });
 
 test('non-uniform or invalid tunings yield 0', () => {

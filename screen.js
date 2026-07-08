@@ -177,7 +177,7 @@
             computeSemitonesFromTuning,
             createWebSocketProxy,
             toggle,
-            _getState: () => ({ active, semitones, originalChordNames }),
+            _getState: () => ({ active, semitones, originalChordNames: new Map(originalChordNames) }),
         };
         return;
     }
