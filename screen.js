@@ -170,9 +170,21 @@
         console.log(`[Transpose Chords] ${active ? 'Enabled' : 'Disabled'}`);
     }
 
+    // Node-only export hook for tests; browsers fall through to DOM wiring.
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = {
+            transposeChord,
+            computeSemitonesFromTuning,
+            createWebSocketProxy,
+            toggle,
+            _getState: () => ({ active, semitones, originalChordNames }),
+        };
+        return;
+    }
+
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', injectBtn);
-        
+
     } else {
         injectBtn();
     }
