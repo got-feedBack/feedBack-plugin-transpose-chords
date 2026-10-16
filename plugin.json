@@ -4,6 +4,6 @@
   "version": "0.1.0",
   "script": "screen.js",
   "category": "tools",
-  "description": "Transpose chords and capo helper.",
+  "description": "Transpose chord names on the highway to E Standard.",
   "icon": "assets/thumb.svg"
 }
